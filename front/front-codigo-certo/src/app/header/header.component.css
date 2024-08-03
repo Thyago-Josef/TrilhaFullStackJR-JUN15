@@ -1,0 +1,29 @@
+header .container{
+    display:flex;  /*coloca os elementos em flex box ou seija ficarão em linha por padrão o row do proximo parametro mesmo não pondo ele ja vem */
+    flex-direction: row;/*padrão do display flex*/
+    align-items: center;/*ALinha o elemento ao centro*/
+    justify-content:space-between;/*vai por um espaçamento entre a logo e os menus estão no mesmo container** a inumeros paramentros para ficar mudando os espaçamentos e os locais dos itens estudar mais depois */
+    background: var(--preto);
+    font-family: 'Arial', Times, serif;
+    color: #e53939 (vermelho);
+}
+
+.logo{
+    margin-left:5px;/*margin do logo em base a margem da tela*/
+    color: #e53939;
+    /* background-color: #e53939; */
+    font-family: 'Arial Black', Times;
+    font-size:40px; /* Aumenta a grossura do logo */
+    position: center;
+}
+
+header nav a{
+    text-decoration: none; /* Vai retirar as linhas de baixo dos textos */
+    color: #AAA;     /*cor das letras */
+    margin-right: 10px; /*espaçamento entre cada menu*/
+
+}
+
+header nav a:hover{/*Evento*/
+    color:#fff; /*altera a cor do menu ao passa o ponteiro */
+}

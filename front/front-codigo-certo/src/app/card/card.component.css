@@ -1,0 +1,43 @@
+.card {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    border-radius: 5px;
+    flex:auto;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 300px;
+  }
+
+  /* .card-header{
+
+  } */
+  
+  .card-header h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+  }
+  
+  .card-body p {
+    margin: 0;
+    background-color: antiquewhite;
+  }
+  
+  .card-footer {
+    text-align: right;
+  }
+  
+  .card-footer button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .card-footer button:hover {
+    background-color: #0056b3;
+  }
+  

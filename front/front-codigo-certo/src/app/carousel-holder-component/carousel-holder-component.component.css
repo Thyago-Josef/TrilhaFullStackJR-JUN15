@@ -1,0 +1,101 @@
+header .container{
+    display:flex;  /*coloca os elementos em flex box ou seija ficarão em linha por padrão o row do proximo parametro mesmo não pondo ele ja vem */
+    flex-direction: row;/*padrão do display flex*/
+    align-items: center;/*ALinha o elemento ao centro*/
+    justify-content:space-between;/*vai por um espaçamento entre a logo e os menus estão no mesmo container** a inumeros paramentros para ficar mudando os espaçamentos e os locais dos itens estudar mais depois */
+}
+
+logo{
+    margin-left:5px;/*margin do logo em base a margem da tela*/
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size:40px; /* Aumenta a grossura do logo */
+}
+
+h3{
+    color: #D6D6D6;
+}
+
+.owl-carousel {
+    display: block;
+    width: 100%;
+    margin-top: 100px;
+    color:red;
+    background-color: black;
+    padding-left: 10px;
+}
+
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: visible;
+    -webkit-touch-callout: none;
+    padding-right: 40px;
+    background-color: #fff;
+    height: 320px;
+    
+}
+
+.owl-prev .owl-next{
+    width: 50px;
+    height: 20px;
+    position: absolute; 
+    top:50%;
+    margin-top: 50px;
+    transform: translateY(-50%);
+    background-color: rgb(19, 8, 1);
+    /* background: none !important; */
+ } 
+
+ /* ajusto a seta next */
+.owl-next::after {
+    transform: rotate(-45deg);
+    margin-left: -14px;
+ }
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    /* margin: 5px; */
+    /* padding: 4px 7px; */
+    background: #D6D6D6;
+    /* display: inline-block; */
+    display: absolute;
+    cursor: pointer;
+    top:5%;
+    border-radius: 3px;
+    margin-top: 1px;
+    /* margin-top: 2px;*/
+} 
+
+/* .owl-theme .owl-nav {
+    margin-top: -250px;
+} */
+
+ /* .owl-dots {
+display: none;
+}  */
+
+    
+header nav a{
+    text-decoration: none; /* Vai retirar as linhas de baixo dos textos */
+    color: #AAA;     /*cor das letras */
+    margin-right: 10px; /*espaçamento entre cada menu*/
+
+}
+
+header nav a:hover{/*Evento*/
+    color:#fff; /*altera a cor do menu ao passa o ponteiro */
+}
+
+
+.box{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+/* .container{
+    
+} */
+
