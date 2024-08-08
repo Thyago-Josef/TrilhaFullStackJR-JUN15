@@ -1,7 +1,10 @@
 package com.projetocodigocerto.api.entitiy;
 
+import com.projetocodigocerto.api.dto.request.UserRequest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 public class User {
@@ -39,5 +42,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public  Boolean isLoginCorrect(UserRequest userRequest, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches(userRequest.password(), this.password);
     }
 }

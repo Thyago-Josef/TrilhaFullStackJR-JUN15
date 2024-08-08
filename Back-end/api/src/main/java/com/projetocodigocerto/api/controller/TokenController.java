@@ -5,6 +5,7 @@ import com.projetocodigocerto.api.dto.response.UserResponse;
 import com.projetocodigocerto.api.repositories.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,27 +18,21 @@ public class TokenController {
 
     private final UserRepository userRepository;
 
-    public TokenController(JwtEncoder jwtEncoder, UserRepository userRepository) {
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public TokenController(JwtEncoder jwtEncoder, UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.jwtEncoder = jwtEncoder;
         this.userRepository = userRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-//    public String getToken(String login, String password) {
-//        return jwtEncoder.encode(com.projetocodigocerto.api.dto.request.UserRequest
-//                        .builder()
-//                        .login(login)
-//                        .password(password)
-//                        .build())
-//                .getTokenValue();
-//    }
 
-
-    @PostMapping("/token")
+    @PostMapping("/login")
     public ResponseEntity<UserResponse> login(@RequestBody UserRequest userRequest) {
 
         var user = userRepository.findByLogin(userRequest.login());
 
-        if(user.isEmpty()) {
+        if(user.isEmpty() ||user.get().isLoginCorrect(userRequest)) {
             throw new BadCredentialsException("User not found");
         }
 
